@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AgregarAlumno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primerNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="segundoNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primerApellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SegundoApellido" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPrograma" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarAlumnoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarAlumnos">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarAlumnosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarAlumnosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarProgramas">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarProgramasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarProgramasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarMateria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMateria" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPrograma" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarMateriaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarMaterias">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarMateriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarMateriasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarNotaFinal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intAlumno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codMateria" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="notaFinal" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarNotaFinalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarNotasFinales">
+        <s:complexType />
+      </s:element>
+      <s:element name="CargarNotasFinalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarNotasFinalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AgregarAlumnoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="AgregarAlumnoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarAlumnosSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarAlumnos" />
+  </wsdl:message>
+  <wsdl:message name="CargarAlumnosSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarAlumnosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarProgramasSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarProgramas" />
+  </wsdl:message>
+  <wsdl:message name="CargarProgramasSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarProgramasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarMateriaSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarMateria" />
+  </wsdl:message>
+  <wsdl:message name="AgregarMateriaSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarMateriasSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarMaterias" />
+  </wsdl:message>
+  <wsdl:message name="CargarMateriasSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarMateriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarNotaFinalSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarNotaFinal" />
+  </wsdl:message>
+  <wsdl:message name="AgregarNotaFinalSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarNotaFinalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarNotasFinalesSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarNotasFinales" />
+  </wsdl:message>
+  <wsdl:message name="CargarNotasFinalesSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarNotasFinalesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_NotasSoap">
+    <wsdl:operation name="AgregarAlumno">
+      <wsdl:input message="tns:AgregarAlumnoSoapIn" />
+      <wsdl:output message="tns:AgregarAlumnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarAlumnos">
+      <wsdl:input message="tns:CargarAlumnosSoapIn" />
+      <wsdl:output message="tns:CargarAlumnosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarProgramas">
+      <wsdl:input message="tns:CargarProgramasSoapIn" />
+      <wsdl:output message="tns:CargarProgramasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarMateria">
+      <wsdl:input message="tns:AgregarMateriaSoapIn" />
+      <wsdl:output message="tns:AgregarMateriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarMaterias">
+      <wsdl:input message="tns:CargarMateriasSoapIn" />
+      <wsdl:output message="tns:CargarMateriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarNotaFinal">
+      <wsdl:input message="tns:AgregarNotaFinalSoapIn" />
+      <wsdl:output message="tns:AgregarNotaFinalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarNotasFinales">
+      <wsdl:input message="tns:CargarNotasFinalesSoapIn" />
+      <wsdl:output message="tns:CargarNotasFinalesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_NotasSoap" type="tns:WS_NotasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AgregarAlumno">
+      <soap:operation soapAction="http://tempuri.org/AgregarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarAlumnos">
+      <soap:operation soapAction="http://tempuri.org/CargarAlumnos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarProgramas">
+      <soap:operation soapAction="http://tempuri.org/CargarProgramas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarMateria">
+      <soap:operation soapAction="http://tempuri.org/AgregarMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarMaterias">
+      <soap:operation soapAction="http://tempuri.org/CargarMaterias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarNotaFinal">
+      <soap:operation soapAction="http://tempuri.org/AgregarNotaFinal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarNotasFinales">
+      <soap:operation soapAction="http://tempuri.org/CargarNotasFinales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_NotasSoap12" type="tns:WS_NotasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AgregarAlumno">
+      <soap12:operation soapAction="http://tempuri.org/AgregarAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarAlumnos">
+      <soap12:operation soapAction="http://tempuri.org/CargarAlumnos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarProgramas">
+      <soap12:operation soapAction="http://tempuri.org/CargarProgramas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarMateria">
+      <soap12:operation soapAction="http://tempuri.org/AgregarMateria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarMaterias">
+      <soap12:operation soapAction="http://tempuri.org/CargarMaterias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarNotaFinal">
+      <soap12:operation soapAction="http://tempuri.org/AgregarNotaFinal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarNotasFinales">
+      <soap12:operation soapAction="http://tempuri.org/CargarNotasFinales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_Notas">
+    <wsdl:port name="WS_NotasSoap" binding="tns:WS_NotasSoap">
+      <soap:address location="http://localhost:56672/WS_Notas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_NotasSoap12" binding="tns:WS_NotasSoap12">
+      <soap12:address location="http://localhost:56672/WS_Notas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
